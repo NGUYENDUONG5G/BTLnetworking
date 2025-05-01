@@ -27,7 +27,7 @@ def sender(receiver_ip, receiver_port, window_size):
 
     try:
         data, addr = s.recvfrom(2048)
-        ackHeader = data[:16]
+        ackHeader = PacketHeader(data[:16])
         if ackHeader.type != 3 or ackHeader.seq_num != 1:
             print("Couldn't connect")
             return
