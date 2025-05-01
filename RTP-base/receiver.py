@@ -83,7 +83,7 @@ def main():
     )
     args = parser.parse_args()
 
-    sender(args.receiver_ip, args.receiver_port, args.window_size)
+    receiver(args.receiver_ip, args.receiver_port, args.window_size)
 
 
 if __name__ == "__main__":
