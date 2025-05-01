@@ -54,7 +54,7 @@ def receiver(receiver_ip, receiver_port, window_size):
                 sys.stdout.buffer.flush()
                 expected_seq += 1
             # Always send cumulative ACK
-            ack_header = PacketHeader(type=3, seq_num=expected_seq)
+            ack_header = PacketHeader(type=3, seq_num=expected_seq-1)
             ack_header.checksum = compute_checksum(bytes(ack_header))
             s.sendto(bytes(ack_header), addr)
 

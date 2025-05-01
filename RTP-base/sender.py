@@ -88,8 +88,6 @@ def sender(receiver_ip, receiver_port, window_size):
                 start_timer()
             next_seq += 1
 
-        if root == len(packets) and not end_sent:
-            send_end_packet()
 
         try:
             data, address = s.recvfrom(2048)
